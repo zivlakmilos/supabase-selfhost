@@ -1,0 +1,40 @@
+{
+  "name": "supabase-selfhost",
+  "version": "1.0.0",
+  "description": "Supabase Selfhost Scripts",
+  "main": "src/main.js",
+  "bin": {
+    "supabase-selfhost": "bin/supabase-selfhost.js"
+  },
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zivlakmilos/supabase-selfhost.git"
+  },
+  "keywords": [
+    "supabase",
+    "supabase-selfhost"
+  ],
+  "author": "Milos Zivlak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zivlakmilos/supabase-selfhost/issues"
+  },
+  "homepage": "https://github.com/zivlakmilos/supabase-selfhost#readme",
+  "dependencies": {
+    "figlet": "^1.6.0",
+    "fs-extra": "^11.1.1",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/figlet": "^1.5.6",
+    "@types/node": "^20.5.3",
+    "@types/yargs": "^17.0.24",
+    "typescript": "^5.1.6"
+  }
+}
