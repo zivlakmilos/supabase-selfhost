@@ -1,6 +1,6 @@
 {
   "name": "supabase-selfhost",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Supabase Selfhost Scripts",
   "main": "src/main.js",
   "bin": {
