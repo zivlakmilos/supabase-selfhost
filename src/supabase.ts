@@ -8,7 +8,6 @@ export const initSupabase = (args: Args) => {
   execSync('git clone --depth 1 https://github.com/supabase/supabase');
   execSync('cd supabase/docker');
   execSync('cp supabase/docker/.env.example supabase/docker/.env');
-  execSync('cd supabase/docker && docker-compose pull');
 
   console.log('Cloning repository... done');
 }
