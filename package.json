@@ -1,6 +1,6 @@
 {
   "name": "supabase-selfhost",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Supabase Selfhost Scripts",
   "main": "src/main.js",
   "bin": {
@@ -9,6 +9,7 @@
   "scripts": {
     "start": "tsc --watch",
     "build": "tsc",
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
