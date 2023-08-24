@@ -1,12 +1,14 @@
 import figlet from "figlet";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
+import { configureSupabase, initSupabase } from "./supabase";
 
 export type Args = {
   [x: string]: unknown,
-  _: string[],
+  _: (string | number)[],
   number: number,
   prefix: string,
+  project: string,
 }
 
 const parseArguments = (rawArgs: string[]) => {
@@ -21,10 +23,16 @@ const parseArguments = (rawArgs: string[]) => {
       default: 0,
     })
     .option('prefix', {
-      alias: 'p',
+      alias: 'x',
       type: 'string',
       description: 'Port Prefix',
-      default: "6",
+      default: '6',
+    })
+    .option('project', {
+      alias: 'p',
+      type: 'string',
+      description: 'Project Name',
+      default: ''
     })
     .parseSync();
 
@@ -35,5 +43,6 @@ export const cli = (rawArgs: string[]) => {
   console.log(figlet.textSync('Supuabase'));
   const args = parseArguments(rawArgs)
 
-  console.log(args);
+  initSupabase(args);
+  configureSupabase(args);
 }
