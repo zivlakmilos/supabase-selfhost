@@ -1,7 +1,7 @@
 import figlet from "figlet";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import { configureSupabase, initSupabase } from "./supabase";
+import { configureSupabase, fixSupabase, initSupabase } from "./supabase";
 
 export type Args = {
   [x: string]: unknown,
@@ -45,4 +45,5 @@ export const cli = (rawArgs: string[]) => {
 
   initSupabase(args);
   configureSupabase(args);
+  fixSupabase(args);
 }

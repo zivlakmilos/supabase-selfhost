@@ -14,7 +14,7 @@ export const initSupabase = (args: Args) => {
 }
 
 export const configureSupabase = (args: Args) => {
-  console.log('Update config files...');
+  console.log('Updateing config files...');
 
   const composer = readFileSync('supabase/docker/docker-compose.yml')
     .toString()
@@ -32,5 +32,16 @@ export const configureSupabase = (args: Args) => {
     .replace(/(\d{4,})/g, match => (Number(args.prefix + match) + args.number * 10).toString());
   writeFileSync('supabase/docker/volumes/logs/vector.yml', vector);
 
-  console.log('Update config files... done');
+  console.log('Updateing config files... done');
+}
+
+export const fixSupabase = (args: Args) => {
+  console.log('Fixing Docker compose...');
+
+  const composer = readFileSync('supabase/docker/docker-compose.yml')
+    .toString()
+    .replace(new RegExp(': true', 'g'), ': 1');
+  writeFileSync('supabase/docker/docker-compose.yml', composer);
+
+  console.log('Fixing Docker compose... done');
 }
